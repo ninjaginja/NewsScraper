@@ -1,8 +1,17 @@
 <div class="container">
-  <div class="row">
-    <div class="col s1">
+  <div class="row" id="header">
+    <div class="col s12">
       <h1>NewsScraper</h1>
-      <h2>Your escape from reality, brought to you by The Onion.</h2>
+      <h2>Daily headlines brought to you by The Hustle.</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s10" id="articles">
+      <ul>
+        {{#each articles}}
+          {{> articles}}
+        {{/each}}
+      </ul>
     </div>
   </div>
 </div>
