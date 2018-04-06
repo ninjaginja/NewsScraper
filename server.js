@@ -54,6 +54,9 @@ app.get("/scrape", function(req, res) {
       result.link = $(this)
         .find("a")
         .attr("href");
+      result.image = $(this)
+        .find("img")
+        .attr("src");
 
       // Create a new Article using the `result` object built from scraping
       db.Article

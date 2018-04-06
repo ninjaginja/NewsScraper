@@ -1,4 +1,32 @@
+/* Header elements */
+#header {
+  background-color: #294056;
+  color: white;
+  text-align: center;
+}
+
+h1 {
+  font-size: 44px !important;
+}
+
+h2 {
+  font-size: 28px !important;
+  padding-bottom: 30px;
+}
+/* End header elements */
+
+/* Article cards */
+#articles {
+  height: 450px;
+}
+
+.article-item {
+  border-bottom: 1px solid #ff6666;
+  padding: 20px;
+}
+
 .title {
   font-size: 20px;
-  color: red;
+  color: #24598f;
 }
+/* End article cards */
