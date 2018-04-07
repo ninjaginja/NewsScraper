@@ -62,8 +62,9 @@ app.get("/scrape", function(req, res) {
       db.Article
         .create(result)
         .then(function(dbArticle) {
-          // If we were able to successfully scrape and save an Article, send a message to the client
-          res.send("Scrape Complete");
+          // If we were able to successfully scrape and save an Article, redirect to homepage with articles displayed
+          // res.send("Scrape Complete");
+          res.redirect("/");
         })
         .catch(function(err) {
           // If an error occurred, send it to the client
@@ -80,11 +81,25 @@ app.get("/articles", function(req, res) {
     .find({})
     .then(function(dbArticle) {
       // If we were able to successfully find Articles, send them back to the client
-      // res.json(dbArticle);
+      res.json(dbArticle);
+    })
+    .catch(function(err) {
+      // If an error occurred, send it to the client
+      res.json(err);
+    });
+});
+
+app.get("/", function(req, res) {
+  // Grab every document in the Articles collection
+  db.Article
+    .find({})
+    .then(function(dbArticle) {
+
+      // If we were able to successfully find Articles, render on page
       const hbsObject = {
         articles: dbArticle
       };
-      console.log(hbsObject);
+      // console.log(hbsObject);
       res.render("index", hbsObject);
     })
     .catch(function(err) {
@@ -97,9 +112,10 @@ app.get("/articles", function(req, res) {
 app.get("articles/:id", function(req, res) {
   db.Article
     .findOne({_id: req.params.id})
-    .populate("note")
+    // .populate("note")
     .then(function(dbArticle) {
       res.json(dbArticle);
+      console.log(dbArticle);
     })
     .catch(function(err) {
       res.json(err);

@@ -1,15 +1,27 @@
-<!-- <div class="container" id="header"> -->
-  <div class="row" id="header">
-    <div class="col s12">
-      <h1>NewsScraper</h1>
-      <h2>Daily headlines brought to you by The Hustle.</h2>
-    </div>
+<nav>
+  <div class="nav-wrapper">
+    <ul id="nav-mobile" class="left hide-on-med-and-down">
+      <li><a class="nav-link" href="/">Home</a></li>
+      <li><a class="nav-link" href="badges.html">Saved Articles</a></li>
+      <li><a class="waves-effect waves-light btn" id="scrape-button" href="/scrape">Scrape New Articles</a></li>
+    </ul>
   </div>
-<!-- </div> -->
+</nav>
+
+<div class="row" id="header">
+  <div class="col s12">
+    <h1>NewsScraper</h1>
+    <h2>Daily headlines brought to you by The Hustle.</h2>
+  </div>
+</div>
+
 <div class="container">
-  <div class="row">
+  <div class="row" id="articles">
+    <p id="no-articles-message">There are currently no articles to display. Click the Scrape New Articles button in the header to get new articles.</p>
     {{#each articles}}
       {{> articles}}
     {{/each}}
+  </div>
+  <div class="row" id="notes">
   </div>
 </div>

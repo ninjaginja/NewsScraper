@@ -1,23 +1,41 @@
+/* Nav elements */
+.nav-wrapper {
+  background-color: #2ee5d6;
+}
+
+.nav-link {
+  color: #294056 !important;
+}
+/* End nav elements */
+
 /* Header elements */
 #header {
   background-color: #294056;
   color: white;
   text-align: center;
+  padding-bottom: 30px;
 }
 
 h1 {
   font-size: 44px !important;
+  margin-bottom: 20px !important;
 }
 
 h2 {
+  margin-top: 0 !important;
   font-size: 28px !important;
-  padding-bottom: 30px;
+  font-weight: 200 !important;
+}
+
+#scrape-button {
+  background-color: #294056;
+  color: #ffffff;
 }
 /* End header elements */
 
 /* Article cards */
-#articles {
-  height: 450px;
+#article {
+  height: 400px;
 }
 
 .article-item {
