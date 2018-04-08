@@ -35,7 +35,7 @@ h2 {
 
 /* Article cards */
 #article {
-  height: 400px;
+  height: 500px;
 }
 
 .article-item {
@@ -44,7 +44,15 @@ h2 {
 }
 
 .title {
-  font-size: 20px;
+  font-size: 20px !important;
   color: #24598f;
 }
 /* End article cards */
+
+#no-articles-message {
+  text-align: center;
+}
+
+#modal1 {
+  height: 500px;
+}

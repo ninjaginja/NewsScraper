@@ -1,18 +1,7 @@
-// $.getJSON("/articles", function(data) {
-//   for (var i = 0; i < data.length; i++) {
-//     $("#articles").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "</p>");
-//   }
-// });
-
-// Clear no messages section -- NEED TO FIX TO GET AROUND THE PAGE RELOAD ISSUE
-$("#scrape-button").on("click", function(){
-  $("#no-articles-message").empty();
-});
-
 // Whenever someone clicks a p tag
 $(document).on("click", "p", function() {
   // Empty the notes from the note section
-  $("#notes").empty();
+  $(".notes").empty();
   // Save the id from the p tag
   var thisId = $(this).attr("data-id");
 
@@ -64,13 +53,21 @@ $(document).on("click", "#savenote", function() {
       // Log the response
       console.log(data);
       // Empty the notes section
-      $("#notes").empty();
+      $(".notes").empty();
     });
 
   // Also, remove the values entered in the input and textarea for note entry
   $("#titleinput").val("");
   $("#bodyinput").val("");
 });
+
+// When you click the add note button
+// $(document).on("click", ".addnote", function() {
+//   let articleId = $(".title").attr("data-id");
+//   console.log(articleId);
+//   $("#savenote").data("id", articleId);
+//
+// });
 
 // Save article upon click
 // $(document).on("click", ".save-article", function() {

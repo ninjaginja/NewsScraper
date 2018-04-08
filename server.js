@@ -57,6 +57,9 @@ app.get("/scrape", function(req, res) {
       result.image = $(this)
         .find("img")
         .attr("src");
+      result.summary = $(this)
+        .find("h3")
+        .text();
 
       // Create a new Article using the `result` object built from scraping
       db.Article
@@ -109,7 +112,7 @@ app.get("/", function(req, res) {
 });
 
 // Route for grabbing a specific Article by id, populate it with its note
-app.get("articles/:id", function(req, res) {
+app.get("/articles/:id", function(req, res) {
   db.Article
     .findOne({_id: req.params.id})
     // .populate("note")
@@ -125,6 +128,7 @@ app.get("articles/:id", function(req, res) {
 // Route for saving/updating an Article's associated Note
 app.post("/articles/:id", function(req, res) {
   // Create a new note and pass the req.body to the entry
+  console.log(req.body);
   db.Note
     .create(req.body)
     .then(function(dbNote) {

@@ -11,17 +11,16 @@
 <div class="row" id="header">
   <div class="col s12">
     <h1>NewsScraper</h1>
-    <h2>Daily headlines brought to you by The Hustle.</h2>
+    <h2>Your dose of headlines brought to you by The Hustle.</h2>
   </div>
 </div>
 
 <div class="container">
   <div class="row" id="articles">
-    <p id="no-articles-message">There are currently no articles to display. Click the Scrape New Articles button in the header to get new articles.</p>
+    <p id="no-articles-message">Click the Scrape New Articles button in the header to get new articles.</p>
     {{#each articles}}
       {{> articles}}
     {{/each}}
   </div>
-  <div class="row" id="notes">
-  </div>
+
 </div>

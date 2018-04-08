@@ -1,14 +1,36 @@
 <div class="col s12 m6 l4 left">
+
   <div class="card" id="article">
-    <div class="card-image">
-      <img src="{{image}}">
-      <span class="card-title"></span>
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" src="{{image}}">
     </div>
     <div class="card-content">
-      <p data-id="{{_id}}" class="title">{{title}}</p>
+      <span class="card-title activator grey-text text-darken-4 title" data-id="{{_id}}">{{title}}<i class="material-icons right"></i></span>
+      <p class="summary">{{summary}}</p>
+      <p><a class="activator grey-text text-darken-4 title" data-id="{{_id}}">Add Note</a></p>
     </div>
-    <div class="card-action">
-      <a class="save-article" href="#">Save Article</a>
+
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i>{{title}}</span>
+      <div class="row">
+        <form class="col s12">
+          <div class="row" id="notes">
+            <div class="input-field col s12">
+              <input id="titleinput" type="text" class="validate">
+              <label for="titleinput">Note Title:</label>
+            </div>
+            <div class="input-field col s12">
+              <textarea id="bodyinput" class="materialize-textarea"></textarea>
+              <label for="bodyinput">Add Note:</label>
+            </div>
+          </div>
+        </form>
+        <div class="row">
+          <div class="modal-footer">
+            <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat" id="savenote" data-id="{{_id}}">Save Note</a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
