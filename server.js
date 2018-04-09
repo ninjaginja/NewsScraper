@@ -29,11 +29,17 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static("public"));
 
 // Set mongoose to leverage built in JavaScript ES6 Promises
-// Connect to the Mongo DB
 mongoose.Promise = Promise;
-mongoose.connect("mongodb://localhost/hustleScraper", {
-  useMongoClient: true
-});
+
+// Connect to the Mongo DB
+var databaseUrl = "mongodb://localhost/hustleScraper";
+
+if (process.env.MONGODB_URI) {
+  mongoose.connect(process.env.MONGODB_URI);
+} else {
+    mongoose.connect(databaseUrl);
+};
+
 
 // Routes
 app.get("/scrape", function(req, res) {
