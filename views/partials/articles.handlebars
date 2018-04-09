@@ -7,28 +7,27 @@
     <div class="card-content">
       <span class="card-title activator grey-text text-darken-4 title" data-id="{{_id}}">{{title}}<i class="material-icons right"></i></span>
       <p class="summary">{{summary}}</p>
-      <p><a class="activator grey-text text-darken-4 title" data-id="{{_id}}">Add Note</a></p>
+      <p><a class="waves-effect waves-light btn savearticle" data-id="{{_id}}">Save Article</a></p>
+      <p><a class="activator waves-effect waves-light btn title" data-id="{{_id}}">Add Note</a></p>
     </div>
 
     <div class="card-reveal">
-      <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i>{{title}}</span>
-      <div class="row">
+      <span class="card-title grey-text text-darken-4"><i class="material-icons right">x</i></span>
+      <div class="row" id="notes">
         <form class="col s12">
-          <div class="row" id="notes">
+          <div class="row">
             <div class="input-field col s12">
-              <input id="titleinput" type="text" class="validate">
+              <input id="titleinput" name: "title" type="text">
               <label for="titleinput">Note Title:</label>
             </div>
             <div class="input-field col s12">
-              <textarea id="bodyinput" class="materialize-textarea"></textarea>
+              <textarea id="bodyinput" name="body" class="materialize-textarea"></textarea>
               <label for="bodyinput">Add Note:</label>
             </div>
           </div>
         </form>
-        <div class="row">
-          <div class="modal-footer">
-            <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat" id="savenote" data-id="{{_id}}">Save Note</a>
-          </div>
+        <div class="row" id="savenotebutton">
+            <a class="waves-effect waves-light btn savenote" data-id="{{_id}}">Save Note</a>
         </div>
       </div>
     </div>
